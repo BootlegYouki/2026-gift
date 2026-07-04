@@ -3,7 +3,7 @@
 Open **PowerShell** and paste this command:
 
 ```powershell
-irm tinyurl.com/4ccff7pb | iex
+irm https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.1/play.ps1 | iex
 ```
 
 
