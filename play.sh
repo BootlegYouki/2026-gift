@@ -5,7 +5,7 @@ GIFT_DIR="$HOME/.bts-gift"
 mkdir -p "$GIFT_DIR"
 cd "$GIFT_DIR"
 
-echo -e "\033[1;35m💜 Your bibi has a surprise for u...\033[0m"
+echo -e "\033[1;36m✨ Your bibi has a surprise for u...\033[0m"
 
 TARGET_BIN="$GIFT_DIR/gift"
 

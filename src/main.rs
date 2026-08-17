@@ -326,7 +326,7 @@ fn wrap_text(text: &str, width: usize) -> Vec<String> {
 }
 
 fn handle_uninstall() -> Result<(), Box<dyn Error>> {
-    println!("Uninstalling BTS Gift Card...");
+    println!("Uninstalling Birthday Gift Card...");
     
     #[cfg(target_os = "windows")]
     {
@@ -357,7 +357,7 @@ fn handle_uninstall() -> Result<(), Box<dyn Error>> {
                 println!("✓ Removed {:?}", gift_dir);
             }
         }
-        println!("✓ BTS Gift Card successfully uninstalled!");
+        println!("✓ Birthday Gift Card successfully uninstalled!");
     }
 
     Ok(())
@@ -371,7 +371,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         if a == "--uninstall" || a == "uninstall" || a == "-u" {
             return handle_uninstall();
         } else if a == "--help" || a == "-h" || a == "help" {
-            println!("💜 BTS Birthday Gift Card (2026)");
+            println!("✨ Birthday Gift Card (2026)");
             println!("\nUsage:");
             println!("  gift [NAME]        Run the interactive birthday card (e.g. gift \"MY BIBI\")");
             println!("  gift --uninstall   Uninstall and remove all gift card files");

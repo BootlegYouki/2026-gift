@@ -20,4 +20,4 @@ if ($CurrentPath) {
     Write-Host "Cleaned User PATH." -ForegroundColor Cyan
 }
 
-Write-Host "BTS Gift Card successfully uninstalled." -ForegroundColor Magenta
+Write-Host "Birthday Gift Card successfully uninstalled." -ForegroundColor Green
