@@ -7,7 +7,7 @@ if (-not (Test-Path $GiftDir)) {
 
 Set-Location $GiftDir
 
-Write-Host "Unpacking your gift card..." -ForegroundColor Green
+Write-Host "💜 Your bibi has a surprise for u..." -ForegroundColor Magenta
 
 # TODO: Replace the URL below with your actual GitHub repository release URL!
 $ZipUrl = "https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.0/gift.zip"

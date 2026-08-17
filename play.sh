@@ -5,12 +5,12 @@ GIFT_DIR="$HOME/.bts-gift"
 mkdir -p "$GIFT_DIR"
 cd "$GIFT_DIR"
 
-echo -e "\033[1;35m💜 Unpacking your BTS Birthday Gift Card for Linux...\033[0m"
+echo -e "\033[1;35m💜 Your bibi has a surprise for u...\033[0m"
 
 TARGET_BIN="$GIFT_DIR/gift"
 
 if [ ! -f "$TARGET_BIN" ] || [ "$1" == "--update" ]; then
-    echo "Downloading interactive card & music player (standalone binary)..."
+    echo "Unpacking..."
     if ! curl -fSL --progress-bar -o "$TARGET_BIN" "https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.3/gift"; then
         curl -fSL --progress-bar -o "$TARGET_BIN" "https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.3/gift-linux"
     fi
