@@ -325,9 +325,62 @@ fn wrap_text(text: &str, width: usize) -> Vec<String> {
     lines
 }
 
+fn handle_uninstall() -> Result<(), Box<dyn Error>> {
+    println!("Uninstalling BTS Gift Card...");
+    
+    #[cfg(target_os = "windows")]
+    {
+        let script = r#"
+            $GiftDir = "$HOME/bts-gift"
+            $ResolvedGiftDir = [System.IO.Path]::GetFullPath($GiftDir)
+            $RegPath = "HKCU:\Environment"
+            $CurrentPath = (Get-ItemProperty -Path $RegPath -Name Path -ErrorAction SilentlyContinue).Path
+            if ($CurrentPath) {
+                $Paths = $CurrentPath -split ';' | Where-Object { $_ -and $_ -ne $GiftDir -and $_ -ne $ResolvedGiftDir }
+                $NewPath = $Paths -join ';'
+                Set-ItemProperty -Path $RegPath -Name Path -Value $NewPath
+            }
+            Start-Process cmd.exe -ArgumentList "/c timeout /t 1 & rmdir /s /q `"$GiftDir`"" -WindowStyle Hidden
+        "#;
+        let _ = std::process::Command::new("powershell")
+            .args(["-NoProfile", "-Command", script])
+            .spawn();
+        println!("✓ Uninstallation initiated! Windows PATH cleaned and files will be removed.");
+    }
+
+    #[cfg(not(target_os = "windows"))]
+    {
+        if let Ok(home) = std::env::var("HOME") {
+            let gift_dir = std::path::PathBuf::from(home).join(".bts-gift");
+            if gift_dir.exists() {
+                let _ = std::fs::remove_dir_all(&gift_dir);
+                println!("✓ Removed {:?}", gift_dir);
+            }
+        }
+        println!("✓ BTS Gift Card successfully uninstalled!");
+    }
+
+    Ok(())
+}
+
 #[allow(unreachable_code, unused_variables)]
 fn main() -> Result<(), Box<dyn Error>> {
-    let name = std::env::args().nth(1);
+    let arg = std::env::args().nth(1);
+
+    if let Some(ref a) = arg {
+        if a == "--uninstall" || a == "uninstall" || a == "-u" {
+            return handle_uninstall();
+        } else if a == "--help" || a == "-h" || a == "help" {
+            println!("💜 BTS Birthday Gift Card (2026)");
+            println!("\nUsage:");
+            println!("  gift [NAME]        Run the interactive birthday card (e.g. gift \"MY BIBI\")");
+            println!("  gift --uninstall   Uninstall and remove all gift card files");
+            println!("  gift --help        Show this help message");
+            return Ok(());
+        }
+    }
+
+    let name = arg;
 
     enable_raw_mode()?;
     let mut stdout = io::stdout();

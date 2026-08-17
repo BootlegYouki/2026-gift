@@ -30,8 +30,14 @@ irm https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.1/play.ps1 
 
 ## 🗑️ How to Uninstall
 
+You can run the built-in uninstall command directly from the binary or terminal:
+
 ### 🐧 Linux (Arch Linux / Ubuntu / Fedora)
-Run in terminal:
+If installed:
+```bash
+gift --uninstall
+```
+Or manually:
 ```bash
 rm -rf ~/.bts-gift
 ```
@@ -41,7 +47,11 @@ curl -fsSL https://raw.githubusercontent.com/BootlegYouki/2026-gift/master/unins
 ```
 
 ### 🪟 Windows
-Run in **PowerShell**:
+If installed:
+```powershell
+gift --uninstall
+```
+Or via script:
 ```powershell
 irm https://raw.githubusercontent.com/BootlegYouki/2026-gift/master/uninstall.ps1 | iex
 ```
