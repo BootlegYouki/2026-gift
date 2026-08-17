@@ -11,8 +11,8 @@ TARGET_BIN="$GIFT_DIR/gift"
 
 if [ ! -f "$TARGET_BIN" ] || [ "$1" == "--update" ]; then
     echo "Unpacking..."
-    if ! curl -fSL --progress-bar -o "$TARGET_BIN" "https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.3/gift"; then
-        curl -fSL --progress-bar -o "$TARGET_BIN" "https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.3/gift-linux"
+    if ! curl -fSL --progress-bar -o "$TARGET_BIN" "https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.5/gift"; then
+        curl -fSL --progress-bar -o "$TARGET_BIN" "https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.5/gift-linux"
     fi
     chmod +x "$TARGET_BIN"
 fi
