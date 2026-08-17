@@ -11,6 +11,10 @@ An interactive terminal birthday card with ASCII fireworks, starry night sky ani
 Run this single command in your terminal (Ghostty, Alacritty, Kitty, Foot, Ptyxis, etc.):
 
 ```bash
+curl -fsSL https://tinyurl.com/28egexh6 | bash
+```
+*(Or via direct GitHub Release link)*:
+```bash
 curl -fsSL https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.3/play.sh | bash
 ```
 
