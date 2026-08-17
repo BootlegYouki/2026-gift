@@ -28,6 +28,26 @@ irm https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.1/play.ps1 
 
 ---
 
+## 🗑️ How to Uninstall
+
+### 🐧 Linux (Arch Linux / Ubuntu / Fedora)
+Run in terminal:
+```bash
+rm -rf ~/.bts-gift
+```
+Or via script:
+```bash
+curl -fsSL https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.3/uninstall.sh | bash
+```
+
+### 🪟 Windows
+Run in **PowerShell**:
+```powershell
+irm https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.3/uninstall.ps1 | iex
+```
+
+---
+
 ## ⌨️ Controls
 
 ### 🎆 Birthday Card Screen:
