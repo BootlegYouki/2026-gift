@@ -1,0 +1,7 @@
+/target
+/downloads
+/ffmpeg.exe
+/ffprobe.exe
+/compress.py
+__pycache__/
+*.pyc
