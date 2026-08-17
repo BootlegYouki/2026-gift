@@ -37,13 +37,13 @@ rm -rf ~/.bts-gift
 ```
 Or via script:
 ```bash
-curl -fsSL https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.3/uninstall.sh | bash
+curl -fsSL https://raw.githubusercontent.com/BootlegYouki/2026-gift/master/uninstall.sh | bash
 ```
 
 ### 🪟 Windows
 Run in **PowerShell**:
 ```powershell
-irm https://github.com/BootlegYouki/2026-gift/releases/download/v1.0.3/uninstall.ps1 | iex
+irm https://raw.githubusercontent.com/BootlegYouki/2026-gift/master/uninstall.ps1 | iex
 ```
 
 ---
