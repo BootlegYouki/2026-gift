@@ -17,7 +17,10 @@ if [ ! -f "$TARGET_BIN" ] || [ "$1" == "--update" ]; then
     chmod +x "$TARGET_BIN"
 fi
 
-# Add ~/.bts-gift to PATH in current session if not already present
+# Symlink to ~/.local/bin so typing `gift` works in fish, bash, zsh across all terminals
+mkdir -p "$HOME/.local/bin"
+ln -sf "$TARGET_BIN" "$HOME/.local/bin/gift"
+
 if [[ ":$PATH:" != *":$GIFT_DIR:"* ]]; then
     export PATH="$PATH:$GIFT_DIR"
 fi

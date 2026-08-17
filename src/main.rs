@@ -351,7 +351,11 @@ fn handle_uninstall() -> Result<(), Box<dyn Error>> {
     #[cfg(not(target_os = "windows"))]
     {
         if let Ok(home) = std::env::var("HOME") {
-            let gift_dir = std::path::PathBuf::from(home).join(".bts-gift");
+            let gift_dir = std::path::PathBuf::from(&home).join(".bts-gift");
+            let local_bin = std::path::PathBuf::from(&home).join(".local/bin/gift");
+            if local_bin.exists() {
+                let _ = std::fs::remove_file(&local_bin);
+            }
             if gift_dir.exists() {
                 let _ = std::fs::remove_dir_all(&gift_dir);
                 println!("✓ Removed {:?}", gift_dir);
